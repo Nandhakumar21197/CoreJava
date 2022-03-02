@@ -1,0 +1,41 @@
+package Corejavaphase1;
+
+		import java.util.*;
+
+		public class Maps {
+			
+			public static void main(String [] args) {
+				HashMap<Integer,String> h = new HashMap<Integer,String>();
+				h.put(1,"Nandha");
+				h.put(2, "Pachai");
+				h.put(3,"Kadhir");
+				System.out.println("The Elements of HashMap are ");
+				for(Map.Entry m:h.entrySet()) {
+					System.out.println(m.getKey()+""+m.getValue());
+				}
+				
+				
+				Hashtable<Integer,String> ht = new Hashtable<Integer,String>();
+				ht.put(4, "Karthi");
+				ht.put(5, "Prasanth");
+				ht.put(6,"Karan");
+				System.out.println("\n");
+				System.out.println("The Elements of HashTable are ");
+				for(Map.Entry s:ht.entrySet()) {
+					System.out.println(s.getKey()+""+s.getValue());
+				}
+				
+				TreeMap<Integer,String> t= new TreeMap<Integer,String>();
+				t.put(7, "Siva");
+				t.put(8, "Sathish");
+				t.put(9,"Muthu");
+				System.out.println("\n");
+				System.out.println("The Elements of TreeMap are");
+				for(Map.Entry k:t.entrySet()) {
+					System.out.println(k.getKey()+""+k.getValue());
+					
+				}
+		 		
+			}
+
+		}

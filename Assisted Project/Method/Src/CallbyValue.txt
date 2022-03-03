@@ -1,0 +1,20 @@
+package Corejavaphase1;
+
+public class CallbyValue {
+
+	
+			int val = 200;
+			
+			int operation(int val) {
+				val=val*10/100;
+				return val;
+			}
+			
+			public static void main (String [] args) {
+				
+			 CallbyValue m1=new CallbyValue();
+			 System.out.println("Before operation value of data is "+m1.val);
+			 m1.operation(100);
+			 System.out.println("After operation value of data is "+m1.val);
+			}
+			}

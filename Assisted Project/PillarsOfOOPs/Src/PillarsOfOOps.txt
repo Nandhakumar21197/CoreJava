@@ -1,0 +1,45 @@
+package Corejavaphase1;
+
+public class PillarsOfOOps {
+
+	
+			String name;
+			String bread;
+			int age;
+			String color;
+		 public PillarsOfOOps(String name,String bread,int age, String color) {
+			 this.name=name ;
+			 this.bread=bread;
+			 this.age=age;
+			 this.color=color;
+			 
+		 }
+			public String getName() {
+				return name;
+				
+			}
+			public String getBread() {
+				return bread;
+				
+			}
+
+			public String getColor() {
+				return color;
+				
+			}
+			public int getAge() {
+				return age;
+				
+			}
+			@Override
+			public String toString () {
+				return("Hi, my name is "+this.getName()+"\n My Bread is "+this.getBread()+ "\n My age is "+this.getAge()+ "\n I am "+this.getColor()+" color");
+			}
+			public static void main(String[] args) {
+				
+			PillarsOfOOps p = new PillarsOfOOps("NandhaKumar","Brown",5,"Black");
+			System.out.println(p.toString());
+
+			}
+
+		}

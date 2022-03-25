@@ -1,0 +1,251 @@
+
+
+li.html
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="/5O-8859-I">
+<title>link</title>
+</head>
+<body>
+<a href="icdex.htmi">Login</a>
+<a href="Io#Out">Logout</a>
+<a href="piofIie">Profile</a>
+
+</body>
+</html>
+List.html
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="/5O-8859-I">
+<title>LOgin Example</title>
+</head>
+<body>
+<h1>Login Application using HttpSession</h1>
+<a href="fzdex.LtnI">Login</a>|
+<a href="iogout">Logout</a>|
+<a href="proff2e">Profile</a>
+</bodys
+</html>
+Index.java
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="/SO-8859-I">
+<title>User login logout</title>
+</head>
+
+
+
+<body>
+<form method="post" action="IogIz">
+Email ID:<input type="text" name="Userzame"
+
+/><br/>
+
+/><br/>
+
+</body>
+</html>
+
+Password:<input type="text" name="passrord"
+
+<input type="submIt" value="IogIz" />
+</form>
+
+Validatin Login.java
+
+package loginlogout;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException; import javax.servlet.annotation.WebServlet; import 
+javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest; import javax.servlet.http.HttpServletResponse; import 
+javax.servlet.http.HttpSession;
+
+* Servlet implementation class login @WebServlet("/login")
+public class login extends HttpServlet {
+private static final long serialWersionVID = lL;
+
+* Default constructor. public login() (
+
+
+
+* @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+
+protected void doPost(HttpServletRequest request, HttpServletResponse response) throws 
+ServletException, IOException {
+
+response.setContentType("text/html"); PrintWriter out=response.getWriter();
+
+request.getRequestDispatcher("li.html").include(request
+, response);
+
+String username=request.getParameter("username")r
+String
+password=request.getParameter("password");
+
+if(password.equals("adminl23”)){ out.print(“Welcome, "+username) r HttpSession 
+session=request.getsession(); session.setAttribute("username",username);
+
+else{
+out.print("Sorry, username or password
+error!");
+
+request.getRequestDispatcher("index.html”).include(requ est, response);
+
+out.close();
+
+
+Validation logout.java
+
+
+package userlogout;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException; import javax.servlet.annotation.WebServlet; import 
+javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest; import javax.servlet.http.HttpServletResponse; import 
+javax.servlet.http.HttpSession;
+
+* Servlet implementation class logout @WebServlet("/logout")
+public class logout extends HttpServlet {
+private static final long serialWersionNID = lL;
+
+* @see HttpServlet#HttpServlet()
+
+public logout() ( super();
+// TODO Auto-generated constructor stub
+
+
+* @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+
+protected void doGet(HttpServletRequest request, HttpServletResponse response) throws 
+ServletException, IOException {
+
+response.setContentType("text/html"); PrintWriter out=response.getWriter();
+
+request.getRequestDispatcher("li.html").include(request
+, response);
+
+HttpSession session=request.getsession(); session.invalidate();
+
+
+
+
+
+
+out!");
+out.print("You are successfully logged
+
+
+out.close();
+
+
+
+
+
+
+
+Validation Profile.java
+
+package profile;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException; import javax.servlet.annotation.WebServlet; import 
+javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest; import javax.servlet.http.HttpServletResponse; import 
+javax.servlet.http.HttpSession;
+
+* Servlet implementation class profile
+
+@WebServlet(”/profile")
+public class profile extends HttpServlet {
+private static final long serialWersionUID = lL;
+
+*   HttpServlet#HttpServlet()
+
+public profile() ( super();
+//   Auto-generated constructor stub
+
+
+
+*   HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+
+protected void doGet(HttpServletRequest request, HttpServletResponse response) throws 
+ServletException, IOException {
+
+response.setContentType(“text/html“); PrintWriter out=response.getWriter();
+
+request.getRequestDispatcher("li.html”).include(request
+, response);
+
+HttpSession session=request.getSession(false); if(session!=null){
+String username=(String)session.getAttribute(”username");
+
+out.print("Hello, "+username+" Welcome to Profile”)r
+else{
+out.print(“Please login first”);
+
+request.getRequestDispatcher("index.html”).include(requ est, response);
+
+out.close():
+
+web.html
+<?xml version="7.0" encoding="VTF-8"?>
+<element>
+<web-app xmlns:xsi="Lttp://rwr.r3.org/f00I/XNLScLena- Icstacre" 
+xmlns="Lttp://xmizs.)rp.org/xmI/cs/)avaee" xsi:schemaLocation="Lttp://xmixs.)cp.org/xm2/cs/javaee
+:    .  .o g      ee e -    .  "
+id="VebApp /D" version="4.0">
+<display-name>Userloginloggout</display-name>
+
+<welcome-file-list>
+<welcome—file>index.html</welcome—file>
+<welcome-file>index.jsp</welcome-file>
+<welcome-file>index.htm</welcome-file>
+<welcome-file>default.html</welcome-file>
+<welcome-file>default.jsp</welcome-file>
+<welcome-file>default.htm</welcome-file>
+</welcome-file-list>
+<servlet>
+<description></descriptions
+<display-name>login</display-name>
+<servlet-name>login</servlet-named
+<servlet-class>login</servlet-classy
+</servlet>
+<servlet-mapping>
+<servlet-name>login</servlet-name>
+<url—patterns/login</url—pattern>
+</servlet-mapping>
+<servlet>
+<description></description>
+<display-name>profile</display-name>
+<servlet-name>profile</servlet-named
+<servlet-class>profile</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet—name>profile</servlet—name>
+<url-pattern>/profiled/url-pattern>
+</servlet-mapping>
+<servlet>
+<description></description>
+<display-name>logout</display-name>
+<servlet-name>logout</servlet-name>
+<servlet-class>logout</servlet-class>
+</servlets
+<servlet—mapping>
+<servlet-name>logout</servlet-name> hurl-patterns/logout</url-patterns
+</servlet—mappings
+</web-app>
+</element>
+
+
